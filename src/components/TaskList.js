@@ -17,7 +17,7 @@ export default function TaskList(){
         setAddTaskOpen(false);
     }
 
-    const [filteredTasks, setFilteredTasks] = useState(tasks);
+    const [filteredTasks, setFilteredTasks] = useState([]);
 
 
     const handleOptionChange = (e) => {
@@ -30,8 +30,9 @@ export default function TaskList(){
         }
     }
 
+
     useEffect(() => {
-        setFilteredTasks(tasks)
+        setFilteredTasks(tasks);
     }, [tasks])
 
 
