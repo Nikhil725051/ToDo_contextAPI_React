@@ -9,7 +9,9 @@ export default function taskReducer(state, action){
             newState = {...state, tasks: tasks};
             break;
         case actionTypes.MARK_TASK:
-            tasks[action.payload.index].isComplete = !tasks[action.payload.index].isComplete;
+            var task = tasks[action.payload.index];
+            task = {...task, isComplete: !task.isComplete};
+            tasks[action.payload.index] = task;
             newState = {...state, tasks: tasks};
             break;
         case actionTypes.REMOVE_TASK:

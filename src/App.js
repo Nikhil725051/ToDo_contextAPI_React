@@ -1,9 +1,12 @@
 import TaskList from './components/TaskList';
+import ContextProvider from './context/ContextProvider';
 import './App.css';
 
 function App() {
   return (
-      <TaskList></TaskList>
+      <ContextProvider>
+        <TaskList></TaskList>
+      </ContextProvider>
   );
 }
 
